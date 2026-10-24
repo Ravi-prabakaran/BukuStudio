@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Format step mockup</title>
+<style>
+:root{--text-primary:#1f1e1b;--text-secondary:#5f5e5a;--surface-0:#f5f4ef;--surface-1:#f1efe8;--surface-2:#fff;--border:#e2e0d8;--border-strong:#c9c7bd;--border-accent:#378add;--bg-accent:#e6f1fb;--text-accent:#185fa5;--fill-accent:#2f7fd0;--on-accent:#fff;--radius:8px}
+@media (prefers-color-scheme:dark){:root{--text-primary:#f1efe8;--text-secondary:#b4b2a9;--surface-0:#1b1b1a;--surface-1:#262624;--surface-2:#30302e;--border:#3d3d3a;--border-strong:#5f5e5a;--border-accent:#85b7eb;--bg-accent:#0c447c;--text-accent:#b5d4f4}}
+*{box-sizing:border-box}
+body{margin:0;padding:24px 16px;background:var(--surface-0);color:var(--text-primary);font-family:system-ui,-apple-system,sans-serif}
+.wrap{max-width:720px;margin:0 auto;background:var(--surface-1);border-radius:12px;padding:20px}
+button{font:inherit;color:inherit;background:transparent;border:0.5px solid var(--border-strong);border-radius:var(--radius);padding:6px 12px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.fc{background:var(--surface-2);border:0.5px solid var(--border);border-radius:12px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:6px}
+.fc:hover{border-color:var(--border-strong)}
+.fc.sel{border:2px solid var(--border-accent);padding:13px}
+.art{background:var(--surface-1);border-radius:8px;height:150px;display:flex;align-items:center;justify-content:center}
+.nm{font-size:16px;font-weight:500;margin:4px 0 0}
+.ds{font-size:13px;color:var(--text-secondary);margin:0;line-height:1.5}
+.badge{align-self:flex-start;background:var(--bg-accent);color:var(--text-accent);font-size:12px;padding:2px 10px;border-radius:var(--radius)}
+.tick{display:none;color:var(--text-accent);font-size:13px}
+.fc.sel .tick{display:inline}
+#info{margin-top:16px;background:var(--surface-2);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--text-secondary);line-height:1.6}
+.primary{background:var(--fill-accent);color:var(--on-accent);border-color:var(--fill-accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+    <span style="font-size:13px;color:var(--text-secondary)">Step 3 of 9</span>
+    <button id="read" style="font-size:13px">Read it to me</button>
+  </div>
+  <div style="height:4px;background:var(--border);border-radius:4px;margin-bottom:16px"><div style="width:33%;height:4px;background:var(--fill-accent);border-radius:4px"></div></div>
+  <p style="font-size:20px;font-weight:500;margin:0 0 2px">How should your book be made?</p>
+  <p style="font-size:14px;color:var(--text-secondary);margin:0 0 16px">Pick one. You can add the other kinds later.</p>
+
+  <div class="grid">
+    <button class="fc sel" data-k="paperback" aria-pressed="true">
+      <div class="art"><svg width="120" height="130" viewBox="0 0 120 130" aria-hidden="true">
+        <ellipse cx="62" cy="122" rx="44" ry="4" fill="#888780" opacity=".25"/>
+        <path d="M30 18 L92 14 L92 112 L30 116 Z" fill="#F1EFE8" stroke="#B4B2A9"/>
+        <path d="M33 20 L95 16 L95 114 L33 118 Z" fill="#fff" stroke="#D3D1C7"/>
+        <path d="M22 14 Q60 8 88 10 L88 108 Q60 106 22 112 Z" fill="#5DCAA5" stroke="#0F6E56" stroke-width="1.5"/>
+        <path d="M22 14 L26 14 L26 112 L22 112 Z" fill="#1D9E75"/>
+        <circle cx="56" cy="46" r="14" fill="#FAC775"/>
+        <path d="M34 92 Q50 70 62 84 T84 80 L84 100 L34 102 Z" fill="#9FE1CB"/>
+        <rect x="36" y="22" width="40" height="5" rx="2" fill="#085041" opacity=".6"/>
+      </svg></div>
+      <span class="badge">Recommended</span>
+      <p class="nm">Paperback</p>
+      <p class="ds">Soft, bendy cover. Light and the cheapest to buy.</p>
+      <span class="tick">✓ Selected</span>
+    </button>
+
+    <button class="fc" data-k="hardcover" aria-pressed="false">
+      <div class="art"><svg width="120" height="130" viewBox="0 0 120 130" aria-hidden="true">
+        <ellipse cx="62" cy="122" rx="46" ry="4" fill="#888780" opacity=".25"/>
+        <path d="M30 16 L96 16 L96 114 L30 114 Z" fill="#fff" stroke="#D3D1C7"/>
+        <rect x="16" y="10" width="76" height="108" rx="3" fill="#534AB7" stroke="#26215C" stroke-width="2"/>
+        <rect x="16" y="10" width="12" height="108" rx="2" fill="#3C3489"/>
+        <rect x="36" y="24" width="46" height="62" rx="2" fill="#EEEDFE"/>
+        <circle cx="59" cy="46" r="10" fill="#F0997B"/>
+        <path d="M40 82 Q52 62 62 74 T80 70 L80 84 L40 84 Z" fill="#AFA9EC"/>
+        <rect x="38" y="96" width="42" height="5" rx="2" fill="#CECBF6"/>
+      </svg></div>
+      <span class="badge" style="visibility:hidden">.</span>
+      <p class="nm">Hardcover</p>
+      <p class="ds">Thick, stiff cover that lasts for years. Great as a gift.</p>
+      <span class="tick">✓ Selected</span>
+    </button>
+
+    <button class="fc" data-k="ebook" aria-pressed="false">
+      <div class="art"><svg width="120" height="130" viewBox="0 0 120 130" aria-hidden="true">
+        <ellipse cx="60" cy="122" rx="40" ry="4" fill="#888780" opacity=".25"/>
+        <rect x="22" y="8" width="76" height="110" rx="10" fill="#2C2C2A"/>
+        <rect x="28" y="16" width="64" height="92" rx="3" fill="#E6F1FB"/>
+        <circle cx="74" cy="34" r="8" fill="#FAC775"/>
+        <path d="M28 80 Q44 58 58 72 T92 66 L92 108 L28 108 Z" fill="#85B7EB"/>
+        <path d="M28 92 Q48 80 64 90 T92 86 L92 108 L28 108 Z" fill="#378ADD"/>
+        <circle cx="60" cy="113" r="2" fill="#5F5E5A"/>
+      </svg></div>
+      <span class="badge" style="visibility:hidden">.</span>
+      <p class="nm">eBook</p>
+      <p class="ds">Read on a Kindle, tablet, or phone. Nothing to ship.</p>
+      <span class="tick">✓ Selected</span>
+    </button>
+  </div>
+
+  <div id="info"></div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:8px;flex-wrap:wrap">
+    <button>← Back</button>
+    <div style="display:flex;gap:8px">
+      <button id="auto">Not sure? Pick for me</button>
+      <button class="primary">Next →</button>
+    </div>
+  </div>
+</div>
+<script>
+const info = {
+  paperback: 'Good to know: most picture books on Amazon are paperbacks. Your 32-page book would print for about the same price as a toy.',
+  hardcover: "Good to know: Amazon needs at least 75 pages for a hardcover. A 32-page picture book is too short, so we'd suggest paperback instead.",
+  ebook: "Good to know: pictures look bright on a screen. We'll make the Kindle version automatically, so you can pick Paperback and still get an eBook."
+};
+const cards = [...document.querySelectorAll('.fc')], box = document.getElementById('info');
+function pick(k) {
+  cards.forEach(c => { const on = c.dataset.k === k; c.classList.toggle('sel', on); c.setAttribute('aria-pressed', on); });
+  box.textContent = info[k];
+}
+cards.forEach(c => c.onclick = () => pick(c.dataset.k));
+document.getElementById('auto').onclick = () => pick('paperback');
+document.getElementById('read').onclick = () => {
+  try {
+    speechSynthesis.cancel();
+    speechSynthesis.speak(new SpeechSynthesisUtterance('How should your book be made? ' +
+      cards.map(c => c.querySelector('.nm').textContent + '. ' + c.querySelector('.ds').textContent).join(' ')));
+  } catch (e) {}
+};
+pick('paperback');
+</script>
+</body>
+</html>

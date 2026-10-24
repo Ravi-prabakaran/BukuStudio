@@ -1,0 +1,22 @@
+{
+  "name": "bukustudio",
+  "version": "0.4.0",
+  "description": "Turn a story, and a child's own drawings, into a publish-ready Amazon KDP book: print-ready paperback or hardcover, Kindle eBook, and the full listing. Every choice is a picture card, so kids can use it too. No API keys needed.",
+  "author": {
+    "name": "Ravi Prabakaran",
+    "url": "https://github.com/Ravi-prabakaran"
+  },
+  "homepage": "https://github.com/Ravi-prabakaran/BukuStudio",
+  "repository": "https://github.com/Ravi-prabakaran/BukuStudio",
+  "keywords": [
+    "book",
+    "children's book",
+    "picture book",
+    "kdp",
+    "amazon",
+    "self-publishing",
+    "kindle",
+    "illustration"
+  ],
+  "license": "MIT"
+}

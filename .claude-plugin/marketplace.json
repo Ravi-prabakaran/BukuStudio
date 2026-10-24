@@ -1,0 +1,18 @@
+{
+  "name": "bukustudio",
+  "owner": { "name": "Ravi Prabakaran" },
+  "metadata": {
+    "description": "BukuStudio: your story, made into a real book.",
+    "version": "0.4.0"
+  },
+  "plugins": [
+    {
+      "name": "bukustudio",
+      "source": "./",
+      "description": "Turn a story, and a child's own drawings, into a publish-ready Amazon KDP book.",
+      "version": "0.4.0",
+      "category": "productivity",
+      "keywords": ["book", "children's book", "kdp", "self-publishing"]
+    }
+  ]
+}

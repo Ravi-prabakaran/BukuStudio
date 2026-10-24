@@ -1,0 +1,715 @@
+{
+  "version": 1,
+  "steps": [
+    {
+      "id": "story",
+      "kind": "story",
+      "title": "Tell us your story",
+      "subtitle": "A few lines is enough. We'll turn it into pages."
+    },
+    {
+      "id": "audience",
+      "kind": "cards",
+      "title": "Who is the book for?",
+      "subtitle": "This sets how many words go on each page.",
+      "default": "3-7",
+      "options": [
+        {
+          "value": "0-3",
+          "name": "Babies and toddlers",
+          "desc": "Ages 0 to 3. Very few words, big simple pictures.",
+          "tip": "Amazon prints paper pages, not thick board pages, so the book is best read with a grown-up."
+        },
+        {
+          "value": "3-7",
+          "name": "Little kids",
+          "desc": "Ages 3 to 7. Read aloud together at bedtime.",
+          "tip": "This is the classic picture book age."
+        },
+        {
+          "value": "6-9",
+          "name": "Early readers",
+          "desc": "Ages 6 to 9. Short sentences kids read by themselves."
+        },
+        {
+          "value": "8-12",
+          "name": "Big kids",
+          "desc": "Ages 8 to 12. Short chapters with some pictures."
+        },
+        {
+          "value": "teen",
+          "name": "Teens",
+          "desc": "Ages 13 and up. Longer stories with chapters."
+        },
+        {
+          "value": "adult",
+          "name": "Grown-ups",
+          "desc": "Adult readers."
+        }
+      ]
+    },
+    {
+      "id": "bookType",
+      "kind": "cards",
+      "title": "What kind of book?",
+      "subtitle": "We picked the usual kind for this age.",
+      "recommend": {
+        "by": "audience",
+        "map": {
+          "0-3": "picture",
+          "3-7": "picture",
+          "6-9": "early",
+          "8-12": "chapter",
+          "teen": "novel",
+          "adult": "novel"
+        }
+      },
+      "options": [
+        {
+          "value": "picture",
+          "name": "Picture book",
+          "desc": "A big picture on every page and a few lines of words.",
+          "facts": {
+            "Pictures": "Every page",
+            "Words per page": "A few lines",
+            "Pages": "24 to 48"
+          }
+        },
+        {
+          "value": "early",
+          "name": "Early reader",
+          "desc": "Short, easy sentences and a picture on most pages.",
+          "facts": {
+            "Pictures": "Most pages",
+            "Words per page": "1 to 3 sentences",
+            "Pages": "32 to 64"
+          }
+        },
+        {
+          "value": "chapter",
+          "name": "Chapter book",
+          "desc": "Short chapters with a few pictures.",
+          "facts": {
+            "Pictures": "Some",
+            "Words per page": "A full page",
+            "Pages": "60 to 120"
+          }
+        },
+        {
+          "value": "novel",
+          "name": "Novel",
+          "desc": "Mostly words, maybe a picture for each chapter.",
+          "facts": {
+            "Pictures": "Few or none",
+            "Words per page": "A full page",
+            "Pages": "100 and up"
+          }
+        }
+      ]
+    },
+    {
+      "id": "format",
+      "kind": "cards",
+      "title": "How should your book be made?",
+      "subtitle": "Pick one. The Kindle eBook is made for free with any choice.",
+      "default": "paperback",
+      "options": [
+        {
+          "value": "paperback",
+          "name": "Paperback",
+          "desc": "Soft, bendy cover. Light and the cheapest to buy.",
+          "tip": "Most picture books on Amazon are paperbacks. We'll make the Kindle version too. Hardcover is offered for longer books (75+ pages).",
+          "facts": {
+            "Cover": "Soft",
+            "Lasts": "Good",
+            "Price": "$",
+            "Short books": "Yes"
+          }
+        },
+        {
+          "value": "hardcover",
+          "name": "Hardcover",
+          "desc": "Thick, stiff cover that lasts for years. Great as a gift.",
+          "tip": "Hardcovers last for years and feel special. Amazon makes them for books of 75 to 550 pages, in black and white or bright color.",
+          "facts": {
+            "Cover": "Stiff",
+            "Lasts": "Best",
+            "Price": "$$$",
+            "Short books": "No, 75+ pages"
+          },
+          "only_for": {
+            "bookType": [
+              "chapter",
+              "novel"
+            ]
+          }
+        },
+        {
+          "value": "ebook",
+          "name": "eBook only",
+          "desc": "Read on a Kindle, tablet, or phone. Nothing to ship.",
+          "tip": "Pictures look bright on a screen. You can still add a printed book later.",
+          "facts": {
+            "Cover": "On screen",
+            "Lasts": "Forever",
+            "Price": "Lowest",
+            "Short books": "Yes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "trim",
+      "kind": "cards",
+      "title": "How big should the book be?",
+      "subtitle": "Shown to scale next to a child's hand.",
+      "recommend": {
+        "by": "bookType",
+        "map": {
+          "picture": "8.5x8.5",
+          "early": "6x9",
+          "chapter": "5.5x8.5",
+          "novel": "6x9"
+        }
+      },
+      "options": [
+        {
+          "value": "8.5x8.5",
+          "name": "Square",
+          "desc": "8.5 × 8.5 inches. The classic picture book shape.",
+          "w": 8.5,
+          "h": 8.5,
+          "only_for": {
+            "bookType": [
+              "picture"
+            ],
+            "format": [
+              "paperback",
+              "ebook"
+            ]
+          }
+        },
+        {
+          "value": "8x10",
+          "name": "Tall",
+          "desc": "8 × 10 inches. Room for big pictures and words.",
+          "w": 8,
+          "h": 10,
+          "only_for": {
+            "bookType": [
+              "picture",
+              "early"
+            ],
+            "format": [
+              "paperback",
+              "ebook"
+            ]
+          }
+        },
+        {
+          "value": "8.5x11",
+          "name": "Large",
+          "desc": "8.5 × 11 inches. Like a sheet of printer paper.",
+          "w": 8.5,
+          "h": 11,
+          "only_for": {
+            "bookType": [
+              "picture"
+            ],
+            "format": [
+              "paperback",
+              "ebook"
+            ]
+          }
+        },
+        {
+          "value": "5x8",
+          "name": "Pocket",
+          "desc": "5 × 8 inches. Small and easy to carry.",
+          "w": 5,
+          "h": 8,
+          "only_for": {
+            "bookType": [
+              "chapter",
+              "novel"
+            ],
+            "format": [
+              "paperback",
+              "ebook"
+            ]
+          }
+        },
+        {
+          "value": "5.5x8.5",
+          "name": "Classic",
+          "desc": "5.5 × 8.5 inches. A common chapter book size.",
+          "w": 5.5,
+          "h": 8.5,
+          "only_for": {
+            "bookType": [
+              "chapter",
+              "novel"
+            ]
+          }
+        },
+        {
+          "value": "6x9",
+          "name": "Standard",
+          "desc": "6 × 9 inches. The most common book size.",
+          "w": 6,
+          "h": 9,
+          "only_for": {
+            "bookType": [
+              "early",
+              "chapter",
+              "novel"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pages",
+      "kind": "cards",
+      "title": "How many pages?",
+      "subtitle": "Includes the title page and the end page.",
+      "recommend": {
+        "by": "bookType",
+        "map": {
+          "picture": 32,
+          "early": 32,
+          "chapter": "auto",
+          "novel": "auto"
+        }
+      },
+      "options": [
+        {
+          "value": 24,
+          "name": "24 pages",
+          "desc": "Short and sweet. Amazon's smallest book.",
+          "only_for": {
+            "bookType": [
+              "picture"
+            ]
+          }
+        },
+        {
+          "value": 32,
+          "name": "32 pages",
+          "desc": "The classic picture book length.",
+          "only_for": {
+            "bookType": [
+              "picture",
+              "early"
+            ]
+          }
+        },
+        {
+          "value": 40,
+          "name": "40 pages",
+          "desc": "A little more room for the story.",
+          "only_for": {
+            "bookType": [
+              "picture"
+            ]
+          }
+        },
+        {
+          "value": 48,
+          "name": "48 pages",
+          "desc": "A longer story with more pictures.",
+          "only_for": {
+            "bookType": [
+              "picture",
+              "early"
+            ]
+          }
+        },
+        {
+          "value": 64,
+          "name": "64 pages",
+          "desc": "A long early reader.",
+          "only_for": {
+            "bookType": [
+              "early"
+            ]
+          }
+        },
+        {
+          "value": "auto",
+          "name": "Let the story decide",
+          "desc": "We'll count the pages once the chapters are written.",
+          "only_for": {
+            "bookType": [
+              "chapter",
+              "novel"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "interior",
+      "kind": "cards",
+      "title": "How should the inside be printed?",
+      "subtitle": "The same page printed three ways.",
+      "recommend": {
+        "by": "bookType",
+        "map": {
+          "picture": "premium-color",
+          "early": "premium-color",
+          "chapter": "bw",
+          "novel": "bw"
+        }
+      },
+      "options": [
+        {
+          "value": "premium-color",
+          "name": "Bright color",
+          "desc": "The richest colors. Best for picture books.",
+          "facts": {
+            "Colors": "Brightest",
+            "Price": "$$$"
+          }
+        },
+        {
+          "value": "standard-color",
+          "name": "Everyday color",
+          "desc": "Cheaper, with colors a little less bright.",
+          "facts": {
+            "Colors": "Good",
+            "Price": "$$"
+          },
+          "warn": [
+            {
+              "when_below": {
+                "pages": 72
+              },
+              "text": "Amazon needs at least 72 pages for everyday color. Pick Bright color for a shorter book."
+            }
+          ],
+          "only_for": {
+            "format": [
+              "paperback",
+              "ebook"
+            ]
+          }
+        },
+        {
+          "value": "bw",
+          "name": "Black and white",
+          "desc": "The cheapest. For books with few or no color pictures.",
+          "facts": {
+            "Colors": "Gray only",
+            "Price": "$"
+          },
+          "warn": [
+            {
+              "when": {
+                "bookType": [
+                  "picture",
+                  "early"
+                ]
+              },
+              "text": "The pictures will print in shades of gray."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paper",
+      "kind": "cards",
+      "title": "Which paper?",
+      "subtitle": "The color of the pages.",
+      "recommend": {
+        "by": "interior",
+        "map": {
+          "bw": "cream"
+        },
+        "else": "white"
+      },
+      "options": [
+        {
+          "value": "white",
+          "name": "White",
+          "desc": "Bright white pages. Colors look their best."
+        },
+        {
+          "value": "cream",
+          "name": "Cream",
+          "desc": "Soft, warm pages that are easy on the eyes for long reading.",
+          "only_for": {
+            "interior": [
+              "bw"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "finish",
+      "kind": "cards",
+      "title": "Shiny or soft cover?",
+      "subtitle": "How the outside of the cover feels.",
+      "recommend": {
+        "by": "bookType",
+        "map": {
+          "chapter": "matte",
+          "novel": "matte"
+        },
+        "else": "glossy"
+      },
+      "only_for": {
+        "format": [
+          "paperback",
+          "hardcover"
+        ]
+      },
+      "options": [
+        {
+          "value": "glossy",
+          "name": "Glossy",
+          "desc": "Shiny and bright. Wipes clean, great for little hands."
+        },
+        {
+          "value": "matte",
+          "name": "Matte",
+          "desc": "Soft and smooth, with no shine. Feels elegant."
+        }
+      ]
+    },
+    {
+      "id": "artStyle",
+      "kind": "cards",
+      "title": "What should the pictures look like?",
+      "subtitle": "The same little scene drawn in each style.",
+      "options": [
+        {
+          "value": "watercolor",
+          "name": "Watercolor",
+          "desc": "Soft, gentle paint. Classic bedtime story feel.",
+          "tip_no_service": "Claude paints this itself with soft washes and paper texture. An image service makes richer, more detailed paintings."
+        },
+        {
+          "value": "cartoon",
+          "name": "Cartoon",
+          "desc": "Bold lines and bright colors, like a TV show.",
+          "tip_no_service": "Claude draws bold outlines and bright colors itself. This style works well without an image service."
+        },
+        {
+          "value": "crayon",
+          "name": "Crayon",
+          "desc": "Looks hand-drawn by a child with crayons.",
+          "tip_no_service": "Claude draws waxy crayon texture itself. It looks hand-made, which suits this style."
+        },
+        {
+          "value": "3d",
+          "name": "3D",
+          "desc": "Round, shiny characters, like an animated movie.",
+          "tip_no_service": "Claude draws round, shaded shapes. They're simpler than a real 3D look; an image service makes that."
+        },
+        {
+          "value": "lineart",
+          "name": "Line art",
+          "desc": "Black outlines only. Kids can color it in.",
+          "tip_no_service": "Claude draws clean outlines itself. This style works very well without an image service."
+        },
+        {
+          "value": "coloredpencil",
+          "name": "Colored pencil",
+          "desc": "Soft pencil strokes. Matches kids' own drawings.",
+          "tip_no_service": "Claude shades with pencil-like strokes itself. Great next to children's own drawings."
+        },
+        {
+          "value": "vector",
+          "name": "Simple shapes",
+          "desc": "Clean, flat shapes drawn by Claude. Free, no image service.",
+          "tip_no_service": "Claude's best style. Clean, consistent and sharp, with no image service needed."
+        }
+      ],
+      "recommend": {
+        "by": "imageService",
+        "map": {
+          "none": "vector"
+        },
+        "else": "watercolor"
+      }
+    },
+    {
+      "id": "drawings",
+      "kind": "cards",
+      "title": "Do you have your own drawings?",
+      "subtitle": "You can add them after the words are written.",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "name": "Make all the pictures",
+          "desc": "We'll draw every picture in the style you picked."
+        },
+        {
+          "value": "some",
+          "name": "I have drawings",
+          "desc": "Add your own drawings for any pages, the cover, or the characters.",
+          "tip": "After the words are ready, a page opens where you add photos of the drawings and choose how much to improve each one."
+        }
+      ]
+    },
+    {
+      "id": "layout",
+      "kind": "cards",
+      "title": "Where do the words go?",
+      "subtitle": "How pictures and words share the page.",
+      "recommend": {
+        "by": "bookType",
+        "map": {
+          "picture": "fullbleed-box",
+          "early": "text-below"
+        },
+        "else": "chapter-art"
+      },
+      "options": [
+        {
+          "value": "fullbleed-box",
+          "name": "Words in a box",
+          "desc": "The picture fills the page. Words sit in a soft box.",
+          "only_for": {
+            "bookType": [
+              "picture",
+              "early"
+            ]
+          }
+        },
+        {
+          "value": "text-below",
+          "name": "Words below",
+          "desc": "Picture on top, words underneath.",
+          "only_for": {
+            "bookType": [
+              "picture",
+              "early"
+            ]
+          }
+        },
+        {
+          "value": "side-by-side",
+          "name": "Words beside",
+          "desc": "Words on one page, the picture on the facing page.",
+          "only_for": {
+            "bookType": [
+              "picture",
+              "early"
+            ]
+          }
+        },
+        {
+          "value": "chapter-art",
+          "name": "Picture per chapter",
+          "desc": "Pages of words, with a picture at the start of each chapter.",
+          "only_for": {
+            "bookType": [
+              "chapter",
+              "novel"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "tone",
+      "kind": "cards",
+      "title": "How should the story feel?",
+      "subtitle": "Not sure? We can tell from your story.",
+      "default": "auto",
+      "options": [
+        {
+          "value": "auto",
+          "name": "Let the story decide",
+          "desc": "We'll read your story and match its feeling."
+        },
+        {
+          "value": "funny",
+          "name": "Funny",
+          "desc": "Silly moments and giggles."
+        },
+        {
+          "value": "cozy",
+          "name": "Cozy",
+          "desc": "Warm, gentle, and kind."
+        },
+        {
+          "value": "adventurous",
+          "name": "Adventurous",
+          "desc": "Exciting, brave, and full of surprises."
+        },
+        {
+          "value": "sleepy",
+          "name": "Sleepy",
+          "desc": "Calm and quiet, perfect for bedtime."
+        }
+      ]
+    },
+    {
+      "id": "extras",
+      "kind": "multi",
+      "title": "Anything extra?",
+      "subtitle": "Tap to add or remove. You can pick more than one.",
+      "options": [
+        {
+          "value": "dedication",
+          "name": "Dedication",
+          "desc": "A short note at the front, like \"For Grandma\".",
+          "default_on": true
+        },
+        {
+          "value": "the-end",
+          "name": "The End page",
+          "desc": "A last page that says The End.",
+          "default_on": true,
+          "only_for": {
+            "bookType": [
+              "picture",
+              "early"
+            ]
+          }
+        },
+        {
+          "value": "about-author",
+          "name": "About the author",
+          "desc": "A few lines about who wrote the book."
+        },
+        {
+          "value": "questions",
+          "name": "Questions to talk about",
+          "desc": "Fun questions for after reading together."
+        }
+      ]
+    },
+    {
+      "id": "mode",
+      "kind": "cards",
+      "title": "How much do you want to check?",
+      "subtitle": "You can always change things at the end.",
+      "default": "checkpoints",
+      "options": [
+        {
+          "value": "checkpoints",
+          "name": "Check as we go",
+          "desc": "Approve the title and words, then the pictures, then the final book."
+        },
+        {
+          "value": "auto",
+          "name": "Surprise me",
+          "desc": "Make the whole book, then show me at the end."
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "kind": "summary",
+      "title": "Here's your book",
+      "subtitle": "Tap Change on anything you'd like to fix."
+    }
+  ]
+}

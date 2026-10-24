@@ -1,0 +1,36 @@
+.slots { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.slot { background: var(--card); border: 0.5px solid var(--line); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.slot.has { outline: 2px solid var(--accent-line); outline-offset: -1px; }
+.slot .meta { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); gap: 8px; }
+.slot .words { font-size: 14px; margin: 0; }
+.slot .scene { font-size: 13px; color: var(--muted); display: flex; gap: 6px; margin: 0; }
+.slot .thumb { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--art); border-radius: 10px; }
+.slot .add { display: flex; align-items: center; justify-content: center; gap: 8px; border: 1.5px dashed var(--line-strong); border-radius: 10px; padding: 16px; cursor: pointer; font-weight: 600; color: var(--accent-text); }
+.slot .add:hover { background: var(--art); }
+.slot input[type=file] { display: none; }
+.improve { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.improve .card { padding: 8px; gap: 4px; }
+.improve .card .art { height: 76px; padding: 2px; }
+.improve .card .nm { font-size: 14px; }
+.improve .card .ds { font-size: 12px; }
+.ask { font-size: 14px; font-weight: 600; margin: 4px 0 0; }
+.busy { font-size: 13px; color: var(--muted); }
+
+.pics { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.pic { background: var(--card); border: 0.5px solid var(--line); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.pic .imgs { display: grid; gap: 6px; }
+.pic .imgs.two { grid-template-columns: 1fr 1fr; }
+.pic figure { margin: 0; }
+.pic figure img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; background: var(--art); cursor: zoom-in; display: block; }
+.pic figcaption { font-size: 12px; color: var(--muted); text-align: center; margin-top: 2px; }
+.pic .actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.pic .actions button { font-size: 14px; padding: 6px 10px; }
+.pic .actions button[aria-pressed="true"] { background: var(--accent-bg); color: var(--accent-text); border-color: var(--accent-line); font-weight: 600; }
+.pic.redo { outline: 2px solid var(--warn-text); outline-offset: -1px; }
+.pic textarea { min-height: 60px; font-size: 14px; }
+.chars { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.zoom { position: fixed; inset: 0; background: rgba(0, 0, 0, .8); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 10; cursor: zoom-out; }
+.zoom img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+.pic .meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.pic .type, .slot .type { background: var(--accent-bg); color: var(--accent-text); font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+.chars .pic figure img { aspect-ratio: 3 / 2; object-fit: contain; background: #fff; }
